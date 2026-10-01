@@ -56,12 +56,34 @@ public class SkeletonPanel extends JPanel {
 	}
 
 	private void drawSkeleton(Graphics g, double parentX, double parentY, Node node) {
-		// TODO: Ponga comentarios en este método
+
 		g.fillOval((int) node.getX() - 4, (int) node.getY() - 4, 8, 8);
+		
+		/**
+		 * Ten en cuenta que si un segmento hijo tiene otros
+		 * segmentos hijos, al volver a ejecutarse drawSkeleton() se mete a otro
+		 * for con los hijos del hijo. Esto significa que cada drawSkeleton() solo
+		 * retornará cuando lo hayan hecho TODOS los drawSkeleton que este ha llamado
+		 * a su vez.
+		 */
+		
+		// Código general
+		
 		g.drawLine((int) parentX, (int) parentY, (int) node.getX(), (int) node.getY());
+		
+		//Si el nodo no tiene hijos, no devuelve nada (nada que dibujar)
+		
+		//Caso base
+		
 		if (node.getChildren().size() == 0) {
 			return;
 		}
+		
+		/**
+		 * For que recorre uno a uno los segmentos hijos del segmento padre:
+		 * Paso recursivo.
+		 */
+		
 		for (Node child : node.getChildren()) {
 			drawSkeleton(g, node.getX(), node.getY(), child);
 		}
