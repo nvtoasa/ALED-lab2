@@ -24,12 +24,13 @@ public class ForwardKinematics {
 	 * @return The tree of Nodes that represent the exoskeleton position in absolute
 	 *         coordinates.
 	 */
-	// Public method: returns the root of the position tree
+	// Public method: returns the root of the position tree (método fachada)
 	public static Node computePositions(Segment root, double originX, double originY) {
+		computePositions(root, originX, originY, 0);
 		// TODO: Implemente este método
 	}
 
-	// Private helper method that implements the recursive algorithm
+	// Private helper method that implements the recursive algorithm (método recursivo)
 	private static Node computePositions(Segment link, double baseX, double baseY, double accumulatedAngle) {
 		// TODO: Implemente este método
 	}
