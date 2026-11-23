@@ -1,5 +1,6 @@
 package es.upm.aled.lab2.kinematics;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.upm.aled.lab2.gui.Node;
@@ -13,10 +14,10 @@ public class Segment {
 	
 	//Método constructor
 	
-	public Segment(double length, double angle, List<Segment> children) {
+	public Segment(double length, double angle) {
 		this.length = length;
 		this.angle = angle;
-		this.children = children;
+		this.children = new ArrayList<>();
 	}
 	
 	//Devuelve la longitud del segmento

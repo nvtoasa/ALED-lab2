@@ -26,8 +26,7 @@ public class ForwardKinematics {
 	 */
 	// Public method: returns the root of the position tree (método fachada)
 	public static Node computePositions(Segment root, double originX, double originY) {
-		computePositions(root, originX, originY, 0);
-		// TODO: Implemente este método
+		return computePositions(root, originX, originY, 0);
 	}
 
 	// Private helper method that implements the recursive algorithm (método recursivo)
